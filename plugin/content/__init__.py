@@ -146,16 +146,6 @@ async def prices(session: CommandSession):
     await session.send(result)
 
 
-@on_command('价格', aliases=('价格查询', '查询价格'), permission=GROUP_MEMBER, only_to_me=False)
-async def price(session: CommandSession):
-    if not await common.token(await common.value(session)):
-        result = await seasun.price(session)
-    else:
-        result = await common.token(await common.value(session))
-    logger.info(result)
-    await session.send(result)
-
-
 @on_command('条件', aliases=('条件查询', '查询条件'), permission=GROUP_MEMBER, only_to_me=False)
 async def method(session: CommandSession):
     if not await common.token(await common.value(session)):
