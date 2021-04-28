@@ -331,29 +331,6 @@ class seasun:
         return result
 
     @staticmethod
-    async def price(session):
-        data = await extend.select(await common.value(session))
-        content = await common.subtext(session)
-        if not content:
-            return "请输入关键字！"
-        if await extend.local(data, 1013) <= await extend.local(data, 1080):
-            data = await submit.content(
-                url=f"https://m.dololo.top/getAllItem/bjsj/0/2019-11-29/1/{content[0]}/x/x/x/x/x/0")
-            data = data['content']
-            result = ""
-            if len(data) > 0:
-                for each in data[:5]:
-                    date, price, buyer, itemname = each['bjsj'], each['jg'], each['lx'], each['wpqc']
-                    result += f"{date} 有人 {price:.0f} {buyer} {itemname}\n"
-                result = result.strip()
-                await extend.update(await common.value(session), 1013, 30)
-            else:
-                result = "请输入正确的关键字！"
-        else:
-            result = await extend.count(await extend.local(data, 1013))
-        return result
-
-    @staticmethod
     async def method(session):
         data = await extend.select(await common.value(session))
         content = await common.subtext(session)
