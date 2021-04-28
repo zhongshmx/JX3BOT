@@ -37,8 +37,8 @@ EXPLAIN_URL = 'https://docs.qq.com/doc/DTEhJTUZNeUJHY2Ni?pub=1&dver=2.1.0'  # �
 MYSQL_CONFIG = {  # NoneBot 数据记录配置。
     'host': '127.0.0.1',  # 连接主机名。
     'user': 'root',  # 用户账号
-    'password': 'ret.content',  # 用户密码
-    'db': 'nonebot',  # 数据库名
+    'password': 'root',  # 用户密码
+    'db': 'test',  # 数据库名
     'port': 3306,  # 连接端口
     'charset': 'utf8',  # 数据编码
     'minsize': 10,  # 连接池最小值
